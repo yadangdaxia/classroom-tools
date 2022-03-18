@@ -104,17 +104,42 @@ function drawNamesFromHat() {
     const studentArray = studentString.split('\n')
     // console.log(studentArray)
     const mixedArray = mix(studentArray)
-    console.log(mixedArray, "MIXED ARRAY")
+
 
     // display mixed array in hat
     const hatList = document.getElementById('hat-list')
-    console.log(hatList);
+
 
     mixedArray.forEach((student) => {
       let studentName = document.createElement('li');
       hatList.appendChild(studentName);
       studentName.textContent = student
     })
+
+    // console.log(hatList, "HAT LIST");
+    // console.log(mixedArray, "MIXED ARRAY")
+
+
+
+    const displayArea = document.getElementById('display-drawn-name')
+
+
+      const drawNameBtn = document.getElementById('draw-a-name')
+      drawNameBtn.addEventListener('click', (e) => {
+
+        while (mixedArray.length) {
+          const random = Math.floor(Math.random() * mixedArray.length);
+          const toRemove = mixedArray.splice(random, 1);
+          displayArea.textContent = `${toRemove}`
+          console.log(mixedArray, "updated MIXED ARRAY");
+
+        }
+      })
+
+
+
+
+
   })
 }
 

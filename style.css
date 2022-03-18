@@ -21,6 +21,13 @@ h1 {
   background-color: white;
 }
 
+
+#display-drawn-name {
+  font-size: 40px;
+  font-weight: bold;
+  color: #1E3163;
+}
+
 #already-finished-container {
   background-color: white;
 }
