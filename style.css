@@ -1,15 +1,41 @@
+body {
+  background-color: #6170b3;
+}
+
 h1 {
 }
 
 .container {
-
+  background-color: #f79fd4;
 }
+
+#draw-names-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#names-in-hat-container {
+  background-color: white;
+}
+
+#already-finished-container {
+  background-color: white;
+}
+
+
 
 
 #random-order-output{
-  background-color: wheat;
+  background-color: #F5EEDC;
 }
 
 #random-teams-output{
-  background-color: wheat;
+  background-color: #F5EEDC;
+}
+
+.footer {
+  margin: 30px;
 }

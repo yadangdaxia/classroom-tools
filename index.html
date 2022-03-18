@@ -25,7 +25,7 @@
       </div>
       <div class="mb-3" id="random-order-output">
         <ol id="random-order-result">Results
-          <li></li>
+
         </ol>
       </div>
     </form>
@@ -37,18 +37,100 @@
     <form id="random-teams-form">
       <div class="mb-3">
         <label for="random-order" class="form-label">Write the names separated by a comma.</label>
-        <textarea class="form-control" id="random-names" rows="1"></textarea>
+        <textarea class="form-control" id="student-names" rows="1"></textarea>
         <label for="random-teams" class="form-label">Number of students per team</label>
-        <input type="text" class="form-control" id="random-teams" placeholder="3">
+        <input type="text" class="form-control" id="students-per-team" placeholder="e.g. 3">
         <div class="mt-3">
           <button type="submit" class="btn btn-primary mb-3">Generate random teams</button>
         </div>
-        <div class="mt-3" id="random-teams-output">
-          <p id="random-team-result">Result here</p>
+        <ol class="mt-3" id="random-teams-output">
+        </ol>
         </div>
+
       </div>
     </form>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="container border mt-5">
+    <h1>Draw names from hat</h1>
+    <div class="row" id="draw-names-container">
+
+
+      <div class="col">
+        <form id="names-in-hat-form">
+          <div class="mb-3">
+            <h3>Write each name on a separate line.</h3>
+            <textarea class="form-control" id="names-for-hat" rows="10"></textarea>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary mb-3">Put names in hat</button>
+          </div>
+        </form>
+      </div>
+
+
+      <div class="col">
+        <div class="mb-3" id="names-in-hat-container">
+          <h2>Here's the hat!</h2>
+          <ul id="hat-list">
+
+          </ul>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary mb-3" id="draw-a-name">Draw a name</button>
+        </div>
+        <div>
+          <p>Display name</p>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="col">
+        <div class="mb-3" id="already-finished-container">
+          <h2>Already finished!</h2>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container border mt-5">
+  <h1>Timer</h1>
+
+</div>
+
+<div class="footer">
+
+</div>
+
+
 <!-- </div> -->
 
 <script src="main.js"></script>
