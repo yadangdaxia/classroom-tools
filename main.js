@@ -91,18 +91,14 @@ function randomTeams() {
 
 function drawNamesFromHat() {
   const form = document.getElementById('names-in-hat-form')
-  console.log(form)
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    // console.log(e, "EVENT")
 
     let item = document.getElementById('hat-list');
-    // console.log(item, "LIST ITEM")
     item.innerHTML = " "
 
     const studentString = document.getElementById('names-for-hat').value
     const studentArray = studentString.split('\n')
-    // console.log(studentArray)
     const mixedArray = mix(studentArray)
 
 
@@ -116,31 +112,64 @@ function drawNamesFromHat() {
       studentName.textContent = student
     })
 
-    // console.log(hatList, "HAT LIST");
-    // console.log(mixedArray, "MIXED ARRAY")
-
-
-
     const displayArea = document.getElementById('display-drawn-name')
 
+    const doneStudents = [];
 
       const drawNameBtn = document.getElementById('draw-a-name')
       drawNameBtn.addEventListener('click', (e) => {
 
-        while (mixedArray.length) {
+        // while (mixedArray.length) {
           const random = Math.floor(Math.random() * mixedArray.length);
           const toRemove = mixedArray.splice(random, 1);
           displayArea.textContent = `${toRemove}`
-          console.log(mixedArray, "updated MIXED ARRAY");
+          // console.log(mixedArray, "updated MIXED ARRAY");
+        // }
 
-        }
+        const alreadyFinished = document.getElementById('already-finished-list')
+        console.log(alreadyFinished);
+
+        alreadyFinished.innerHTML = " "
+
+
+
+        const drawnName = document.getElementById('display-drawn-name').innerText
+        console.log(drawnName, "<-- DRAWN NAME HERE")
+
+
+
+        doneStudents.push(drawnName);
+        console.log(doneStudents, "<-- Done Students array")
+        const doneList = document.getElementById('done-list')
+        console.log(doneList, 'DONELIST')
+
+        doneList.innerHTML = " "
+
+        // while (drawnName) {
+          doneStudents.forEach((student) => {
+            console.log(student)
+            let doneStudent = document.createElement('li');
+            if (student !== '') {
+              doneList.appendChild(doneStudent)
+              doneStudent.textContent = student
+            }
+            else {
+              console.log('no more')
+            }
+          })
+        // }
+
+
+
+        mixedArray.forEach((student) => {
+          let studentName = document.createElement('li');
+          alreadyFinished.appendChild(studentName)
+          studentName.textContent = student
+          // console.log(mixedArray, "MIXED ARRAY")
+        })
       })
-
-
-
-
-
   })
+  // end of form1
 }
 
 
