@@ -2,6 +2,7 @@
 randomOrder()
 randomTeams()
 drawNamesFromHat()
+timer()
 
 function randomOrder() {
   const form = document.getElementById('random-order-form')
@@ -83,11 +84,6 @@ function randomTeams() {
     })
   })
 }
-
-
-
-
-
 
 function drawNamesFromHat() {
   const form = document.getElementById('names-in-hat-form')
@@ -173,6 +169,62 @@ function drawNamesFromHat() {
 }
 
 
+
+// getUserTime()
+// function getUserTime() {
+// }
+
+function timer() {
+
+  const startStopButton = document.getElementById('start-stop-button')
+  startStopButton.addEventListener('click', (e) => {
+
+
+    e.preventDefault()
+
+    const userMinutes = document.getElementById('minutes').value;
+    const userSeconds = document.getElementById('seconds').value;
+
+    console.log(userMinutes, userSeconds)
+    // return { userMinutes, userSeconds };
+    // return userMinutes
+
+    // const startButton = document.getElementById('start-stop-button')
+    // console.log(startButton)
+    const resetButton = document.getElementById('reset-button')
+    console.log(resetButton)
+
+    let startingMinutes = userMinutes;
+    let time = startingMinutes * 60;
+
+    const countdown = document.getElementById('countdown');
+
+    if (time < 0) {
+      console.log('not enough TIME!')
+    }
+    else {
+      setInterval(updateCountdown, 1000);
+    }
+
+    function updateCountdown() {
+
+      let minutes = Math.floor(time / 60);
+      let seconds = time % 60;
+
+      let running = true;
+
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+      countdown.innerHTML = `${minutes}:${seconds}`
+      time--;
+      console.log(time);
+    }
+
+
+
+
+  });
+
+}
 
 
 
