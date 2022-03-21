@@ -52,12 +52,12 @@ function startInterval() {
   }, 1000);
   // console.log(seconds.value)
 
-    let sound = new Audio('images/bell.mp3')
-    setTimeout(function () {
-      sound.play();
-    }, 5000)
-    sound.pause();
-    sound.currentTime = 0;
+    // let sound = new Audio('images/bell.mp3')
+    // setTimeout(function () {
+    //   sound.play();
+    // }, 2000)
+    // sound.pause();
+    // sound.currentTime = 0;
 }
 
 startButton.addEventListener('click', () => {
