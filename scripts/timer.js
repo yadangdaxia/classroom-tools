@@ -19,6 +19,10 @@ function timer() {
     hours.value = 0;
     minutes.value = 0;
     seconds.value = 0;
+
+
+
+
   } else if(seconds.value != 0) {
     seconds.value--;
   } else if(minutes.value !=0 && seconds.value == 0){
@@ -46,7 +50,14 @@ function startInterval() {
   startTimer = setInterval(function () {
     timer();
   }, 1000);
-  console.log(seconds.value)
+  // console.log(seconds.value)
+
+    let sound = new Audio('images/bell.mp3')
+    setTimeout(function () {
+      sound.play();
+    }, 5000)
+    sound.pause();
+    sound.currentTime = 0;
 }
 
 startButton.addEventListener('click', () => {
