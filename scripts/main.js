@@ -99,8 +99,6 @@ function randomTeams() {
 
       team.forEach((member) => {
         console.log(member, "member")
-        // member = " - " + member
-        // console.log(member, "member")
         newTeam.push(" " + member)
       })
 

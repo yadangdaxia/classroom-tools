@@ -1,17 +1,17 @@
 body {
-  background-color: #105652;
+  background-color: #E6D5B8;
   /* font-family: 'Architects Daughter', cursive;
-  font-family: 'Bungee', cursive;
+  /* font-family: 'Bungee', cursive; */
   font-family: 'Indie Flower', cursive;
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif;
   font-family: 'Orbitron', sans-serif;
-  font-family: 'Press Start 2P', cursive; */
+  font-family: 'Press Start 2P', cursive;  */
   /* font-family: 'Roboto', sans-serif; */
   /* font-family: 'Secular One', sans-serif; */
-  font-family: 'Varela Round', sans-serif;
+  /* font-family: 'Varela Round', sans-serif; */
 }
 
-h1 {
+h3 {
   margin: 12px;
 }
 
@@ -20,8 +20,8 @@ h1 {
 }
 
 .container {
-  background-color: #DFD8CA;
-  border-radius: 6px;
+  background-color: #F0A500;
+  border-radius: 50px;
 }
 
 #draw-names-container {
@@ -41,15 +41,17 @@ h1 {
 
 
 #display-drawn-name {
-  font-size: 40px;
+  font-size: 48px;
   font-weight: bold;
   color: #1E3163;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80px;
+  height: 100px;
   background-color: #FBF3E4;
   margin-bottom: 18px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
 }
 
 /* #already-finished-container {
@@ -61,7 +63,7 @@ h1 {
 
 #random-order-output, #random-teams-output, #already-finished-container {
   background-color: #FBF3E4;
-  font-size: 18px;
+  font-size: 24px;
   line-height: 32px;
   font-weight: bold;
   border-radius: 6px;
@@ -117,8 +119,8 @@ justify-content: center; */
 }
 
 .btn, .btn:focus {
-  background-color:#B91646;
-  font-size: 18px;
+  background-color:#E45826;
+  font-size: 24px;
   font-weight: bold;
   text-decoration: none;
   border: none;
@@ -128,7 +130,7 @@ justify-content: center; */
 }
 
 .btn:hover {
-    background-color:#B91646;
+    background-color:#E45826;
     opacity: 0.6;
 }
 
@@ -159,14 +161,16 @@ justify-content: center; */
   justify-content: center;
   /* width: 1200px; */
   /* height: 150px; */
-  font-size: 28px;
-  color: rgb(204, 19, 19);
+  font-size: 32px;
+  /* color: #E45826; */
   padding: 12px;
   margin: 12px;
 }
 
 .switched-on {
-  background-color: #B91646;
+  background-color: #E45826;
+  color: white;
+  border: 2px solid white;
 }
 .switched-off {
   background-color: none;
@@ -180,8 +184,8 @@ justify-content: center; */
   margin-right: 12px;
   border-radius: 50px;
   font-weight: bold;
-  color: #FBF3E4;
-  border: 2px solid #FBF3E4;
+  color: black;
+  border: 2px solid black;
   /* width: 400px; */
   /* background-color: #B91646; */
   line-height: 1.5;
@@ -192,7 +196,7 @@ justify-content: center; */
   color: #FBF3E4;
   cursor: pointer;
   opacity: 0.7;
-  background-color: #B91646;
+  background-color: #E45826;
 }
 
 /* .top-tab.active {
