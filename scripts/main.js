@@ -8,7 +8,8 @@ tabsShow()
 
 window.addEventListener("load", myInit, true); function myInit() {
   // switchOn(tab1), switchOn(tab2), switchOn(tab4), switchOn(tab5)
-  switchOn(tab1)
+  switchOn(tab4), switchOff(tab1), switchOff(tab2), switchOff(tab5);
+  hideAllTools();
 };
 
 
@@ -76,36 +77,56 @@ function randomTeams() {
     // console.log(numberOfStudents, "<- number of students");
 
 
-    // REVISIT THIS
-    shuffledStudents.forEach((student) => {
-      // const lastLetter = student[student.length - 1]
-      // console.log(lastLetter, "LAST LETTER")
-      // console.log(student[0], "STUDENT 0")
-      console.log(student, "STUDENT")
-      student.concat(' x ')
-    })
+
 
 
     let teams = [];
     while (shuffledStudents.length) {
-      teams.push([shuffledStudents.splice(0, ` ${studentsPerTeam} `)])
+      teams.push(shuffledStudents.splice(0, ` ${studentsPerTeam} `))
+      console.log(teams, "teams array after splice")
     }
 
-
+    // teams.forEach((member) => {
+    //   console.log(member, 'MEMBER')
+    // })
 
     const displayArea = document.getElementById('random-teams-output');
     // console.log(displayArea, "DISPLAY AREA")
 
     teams.forEach((team) => {
-      // console.log(team, "TEAM")
+      console.log(team, "TEAM")
+      newTeam = [];
+
+      team.forEach((member) => {
+        console.log(member, "member")
+        // member = " - " + member
+        // console.log(member, "member")
+        newTeam.push(" " + member)
+      })
+
+
       let listItem = document.createElement('li');
       // let textNode = document.createTextNode('Team Number')
       displayArea.appendChild(listItem);
-      listItem.innerHTML = `${team} `
+      listItem.innerHTML = `${newTeam}`
       // document.body.insertBefore(listItem, textNode)
+
     })
   })
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function drawNamesFromHat() {
   const form = document.getElementById('names-in-hat-form')
@@ -201,7 +222,17 @@ function drawNamesFromHat() {
 }
 
 
+function hideAllTools(){
 
+  const randomOrderTab = document.getElementById('random-order-tab');
+  const randomTeamsTab = document.getElementById('random-teams-tab');
+  const magicHatTab = document.getElementById('magic-hat-tab');
+
+
+  magicHatTab.style.display = 'none';
+  randomTeamsTab.style.display = 'none';
+  randomOrderTab.style.display = 'none';
+}
 
 function switchOn(tab) {
   tab.classList.remove('switched-off')
@@ -223,7 +254,7 @@ function tabsShow() {
   const randomOrderTab = document.getElementById('random-order-tab');
   const randomTeamsTab = document.getElementById('random-teams-tab');
   // const namesInHatTab = document.getElementById('names-in-hat-tab');
-  const magicHatTAb = document.getElementById('magic-hat-tab');
+  const magicHatTab = document.getElementById('magic-hat-tab');
   const timerTab = document.getElementById('timer-tab');
 
 
@@ -232,18 +263,40 @@ function tabsShow() {
   function randomOrderShow() {
     if (randomOrderTab.style.display === 'none') {
       randomOrderTab.style.display = 'block';
+
+      magicHatTab.style.display = 'none';
+      timerTab.style.display = 'none';
+      randomTeamsTab.style.display = 'none';
       switchOn(tab1);
+      switchOff(tab4);
+      switchOff(tab2);
+      switchOff(tab5);
+
     } else {
       randomOrderTab.style.display = 'none';
+      magicHatTab.style.display = 'none';
+      timerTab.style.display = 'none';
+      randomTeamsTab.style.display = 'none';
       switchOff(tab1);
     }
   }
   function randomTeamsShow() {
     if (randomTeamsTab.style.display === 'none') {
       randomTeamsTab.style.display = 'block';
+
+      magicHatTab.style.display = 'none';
+      timerTab.style.display = 'none';
+      randomOrderTab.style.display = 'none';
+
       switchOn(tab2);
+      switchOff(tab1);
+      switchOff(tab4);
+      switchOff(tab5);
     } else {
       randomTeamsTab.style.display = 'none';
+      magicHatTab.style.display = 'none';
+      timerTab.style.display = 'none';
+      randomOrderTab.style.display = 'none';
       switchOff(tab2);
     }
   }
@@ -259,11 +312,23 @@ function tabsShow() {
   // }
 
   function magicHatShow() {
-    if (magicHatTAb.style.display === 'none') {
-      magicHatTAb.style.display = 'block';
+    if (magicHatTab.style.display === 'none') {
+      magicHatTab.style.display = 'block';
+
+      timerTab.style.display = 'none';
+      randomTeamsTab.style.display = 'none';
+      randomOrderTab.style.display = 'none';
+
       switchOn(tab5);
+      switchOff(tab1);
+      switchOff(tab4);
+      switchOff(tab2);
+
     } else {
-      magicHatTAb.style.display = 'none';
+      randomTeamsTab.style.display = 'none';
+      magicHatTab.style.display = 'none';
+      timerTab.style.display = 'none';
+      randomOrderTab.style.display = 'none';
       switchOff(tab5);
     }
   }
@@ -271,9 +336,21 @@ function tabsShow() {
   function timerShow() {
     if (timerTab.style.display === 'none') {
       timerTab.style.display = 'block';
+
+      magicHatTab.style.display = 'none';
+      randomTeamsTab.style.display = 'none';
+      randomOrderTab.style.display = 'none';
+
       switchOn(tab4);
+      switchOff(tab1);
+      switchOff(tab2);
+      switchOff(tab5);
+
     } else {
+      randomTeamsTab.style.display = 'none';
+      magicHatTab.style.display = 'none';
       timerTab.style.display = 'none';
+      randomOrderTab.style.display = 'none';
       switchOff(tab4);
     }
   }

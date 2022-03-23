@@ -143,13 +143,18 @@ justify-content: center; */
 
 
 
-
+/* @media (min-width: 800px) {
+  .tabs-bar {
+    display: inline-flex;
+    justify-content: space-evenly;
+  }
+} */
 
 
 .tabs-bar {
   display: flex;
-  /* grid-template-rows: ; */
-  /* flex-direction: row; */
+
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   /* width: 1200px; */
