@@ -1,12 +1,15 @@
 
 randomOrder()
 randomTeams()
-drawNamesFromHat()
+// drawNamesFromHat()
+magicHat()
 // timer()
 tabsShow()
 
 window.addEventListener("load", myInit, true); function myInit() {
-  switchOn(tab1), switchOn(tab2), switchOn(tab3), switchOn(tab4) };
+  // switchOn(tab1), switchOn(tab2), switchOn(tab4), switchOn(tab5)
+  switchOn(tab1)
+};
 
 
 
@@ -200,14 +203,6 @@ function drawNamesFromHat() {
 
 
 
-
-
-
-
-
-
-
-
 function switchOn(tab) {
   tab.classList.remove('switched-off')
   tab.classList.add('switched-on')
@@ -221,12 +216,14 @@ function switchOff(tab) {
 function tabsShow() {
   const tab1 = document.getElementById('tab1');
   const tab2 = document.getElementById('tab2');
-  const tab3 = document.getElementById('tab3');
+  // const tab3 = document.getElementById('tab3');
   const tab4 = document.getElementById('tab4');
+  const tab5 = document.getElementById('tab5');
 
   const randomOrderTab = document.getElementById('random-order-tab');
   const randomTeamsTab = document.getElementById('random-teams-tab');
-  const namesInHatTab = document.getElementById('names-in-hat-tab');
+  // const namesInHatTab = document.getElementById('names-in-hat-tab');
+  const magicHatTAb = document.getElementById('magic-hat-tab');
   const timerTab = document.getElementById('timer-tab');
 
 
@@ -250,15 +247,27 @@ function tabsShow() {
       switchOff(tab2);
     }
   }
-  function namesInHatShow() {
-    if (namesInHatTab.style.display === 'none') {
-      namesInHatTab.style.display = 'block';
-      switchOn(tab3);
+
+  // function namesInHatShow() {
+  //   if (namesInHatTab.style.display === 'none') {
+  //     namesInHatTab.style.display = 'block';
+  //     switchOn(tab3);
+  //   } else {
+  //     namesInHatTab.style.display = 'none';
+  //     switchOff(tab3);
+  //   }
+  // }
+
+  function magicHatShow() {
+    if (magicHatTAb.style.display === 'none') {
+      magicHatTAb.style.display = 'block';
+      switchOn(tab5);
     } else {
-      namesInHatTab.style.display = 'none';
-      switchOff(tab3);
+      magicHatTAb.style.display = 'none';
+      switchOff(tab5);
     }
   }
+
   function timerShow() {
     if (timerTab.style.display === 'none') {
       timerTab.style.display = 'block';
@@ -276,14 +285,137 @@ function tabsShow() {
   tab2.addEventListener('click', (e) => {
     randomTeamsShow();
   })
-  tab3.addEventListener('click', (e) => {
-    namesInHatShow();
-  })
+  // tab3.addEventListener('click', (e) => {
+  //   namesInHatShow();
+  // })
   tab4.addEventListener('click', (e) => {
     timerShow();
   })
-
+  tab5.addEventListener('click', (e) => {
+    magicHatShow();
+  })
 }
+
+
+
+function magicHat() {
+  const form = document.getElementById('names-in-hat-form')
+  form.addEventListener('submit', (e) => {
+    const doneList = document.getElementById('done-list')
+    // console.log(doneList, 'DONELIST')
+    // doneList.innerHTML = " "
+
+    e.preventDefault();
+
+    let item = document.getElementById('hat-list');
+    item.innerHTML = " "
+
+    const studentString = document.getElementById('names-for-hat').value
+    const studentArray = studentString.split('\n')
+    const mixedArray = mix(studentArray)
+
+
+    // Display mixed array in hat
+    const hatList = document.getElementById('hat-list')
+
+    // const alreadyFinished = document.getElementById('already-finished-list')
+    // console.log(alreadyFinished);
+    // alreadyFinished.innerHTML = " "
+
+    // Making the list
+    mixedArray.forEach((student) => {
+      let studentName = document.createElement('li');
+      hatList.appendChild(studentName);
+      studentName.textContent = student
+    })
+
+    // hatList.style.display = 'none';
+
+
+    const displayArea = document.getElementById('display-drawn-name')
+    // const doneStudents = [];
+
+    const drawNameBtn = document.getElementById('draw-a-name')
+    drawNameBtn.addEventListener('click', (e) => {
+
+      // while (mixedArray.length) {
+      const random = mixedArray[Math.floor(Math.random() * mixedArray.length)];
+      // const toRemove = mixedArray.splice(random, 1);
+      displayArea.textContent = `${random}`
+      // console.log(mixedArray, "updated MIXED ARRAY");
+      // }
+
+
+
+      // alreadyFinished.innerHTML = " "
+
+
+
+      const drawnName = document.getElementById('display-drawn-name').innerText
+      console.log(drawnName, "<-- DRAWN NAME HERE")
+
+
+
+      // doneStudents.push(drawnName);
+      // console.log(doneStudents, "<-- Done Students array")
+
+
+      // doneList.innerHTML = " "
+
+      // while (drawnName) {
+      // doneStudents.forEach((student) => {
+      //   console.log(student)
+      //   let doneStudent = document.createElement('li');
+      //   if (student !== '') {
+      //     doneList.appendChild(doneStudent)
+      //     doneStudent.textContent = student
+      //   }
+      //   else {
+      //     console.log('no more')
+      //   }
+      // })
+      // }
+
+
+
+      // mixedArray.forEach((student) => {
+      //   let studentName = document.createElement('li');
+      //   alreadyFinished.appendChild(studentName)
+      //   studentName.textContent = student
+      //   // console.log(mixedArray, "MIXED ARRAY")
+      // })
+    })
+  })
+  // end of form1
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
