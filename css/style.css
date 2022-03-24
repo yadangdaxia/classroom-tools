@@ -1,18 +1,35 @@
+:root {
+  --background-color: #536E93;
+  --container-color: #2C4969;
+  --outputs-color: white;
+  --display-drawn-name: white;
+  --display-name-text: #2C4969;
+  --buttons-color: #fab300;
+  --buttons-text: white;
+  --buttons-border: none;
+  --h3-color: white;
+}
+
+
+
+
+
 body {
-  background-color: #E6D5B8;
+  background-color: var(--background-color);
   /* font-family: 'Architects Daughter', cursive;
   /* font-family: 'Bungee', cursive; */
-  font-family: 'Indie Flower', cursive;
+  /* font-family: 'Indie Flower', cursive; */
   /* font-family: 'Montserrat', sans-serif;
   font-family: 'Orbitron', sans-serif;
   font-family: 'Press Start 2P', cursive;  */
   /* font-family: 'Roboto', sans-serif; */
   /* font-family: 'Secular One', sans-serif; */
-  /* font-family: 'Varela Round', sans-serif; */
+  font-family: 'Varela Round', sans-serif;
 }
 
 h3 {
-  margin: 12px;
+  margin: 18px;
+  color: var(--h3-color);
 }
 
 .container p {
@@ -20,8 +37,10 @@ h3 {
 }
 
 .container {
-  background-color: #F0A500;
+  background-color: var(--container-color);
   border-radius: 50px;
+  border: none !important;
+  /* border: 12px solid black; */
 }
 
 #draw-names-container {
@@ -29,8 +48,12 @@ h3 {
   flex-wrap: wrap;
   /* align-items: center;
   justify-content: center; */
+
 }
 
+textarea {
+  font-size: 24px;
+}
 
 #names-in-hat-container {
   display: flex;
@@ -43,12 +66,12 @@ h3 {
 #display-drawn-name {
   font-size: 48px;
   font-weight: bold;
-  color: #1E3163;
+  color: var(--display-name-text);
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100px;
-  background-color: #FBF3E4;
+  height: 80px;
+  background-color: var(--display-drawn-name);
   margin-bottom: 18px;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
@@ -61,14 +84,14 @@ h3 {
 
 
 
-#random-order-output, #random-teams-output, #already-finished-container {
-  background-color: #FBF3E4;
+#random-order-output, #random-teams-output, #already-finished-container, #names-for-hat, #random-names, #student-names, #students-per-team {
+  background-color: var(--outputs-color);
   font-size: 24px;
-  line-height: 32px;
+  line-height: 36px;
   font-weight: bold;
   border-radius: 6px;
+  margin: 12px;
 }
-
 
 
 
@@ -93,11 +116,13 @@ justify-content: center; */
   margin: 24px;
   font-weight: bold;
   font-size: 60px;
+  color: var(--h3-color);
 }
 
 .digits-container h3 {
   margin-left: 32px;
   margin-right: 32px;
+  color: var(--h3-color);
 }
 
 
@@ -119,7 +144,8 @@ justify-content: center; */
 }
 
 .btn, .btn:focus {
-  background-color:#E45826;
+  background-color: var(--buttons-color);
+  color: var(--buttons-text);
   font-size: 24px;
   font-weight: bold;
   text-decoration: none;
@@ -130,8 +156,9 @@ justify-content: center; */
 }
 
 .btn:hover {
-    background-color:#E45826;
-    opacity: 0.6;
+    background-color: var(--buttons-color);
+    opacity: 0.7;
+    color: var(--buttons-text);
 }
 
 
@@ -155,22 +182,21 @@ justify-content: center; */
 
 .tabs-bar {
   display: flex;
-
   flex-direction: row;
   align-items: center;
   justify-content: center;
   /* width: 1200px; */
   /* height: 150px; */
   font-size: 32px;
-  /* color: #E45826; */
+  color: var(--buttons-text);
   padding: 12px;
   margin: 12px;
 }
 
 .switched-on {
-  background-color: #E45826;
-  color: white;
-  border: 2px solid white;
+  background-color: var(--buttons-color);
+  color: var(--buttons-text);
+
 }
 .switched-off {
   background-color: none;
@@ -184,8 +210,8 @@ justify-content: center; */
   margin-right: 12px;
   border-radius: 50px;
   font-weight: bold;
-  color: black;
-  border: 2px solid black;
+  color: var(--buttons-text);
+  border: 2px solid var(--buttons-border);
   /* width: 400px; */
   /* background-color: #B91646; */
   line-height: 1.5;
@@ -193,10 +219,10 @@ justify-content: center; */
 }
 
 .top-tab:hover {
-  color: #FBF3E4;
+  color: var(--buttons-text);
   cursor: pointer;
   opacity: 0.7;
-  background-color: #E45826;
+  background-color: var(--buttons-color);
 }
 
 /* .top-tab.active {
